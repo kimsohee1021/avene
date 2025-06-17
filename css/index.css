@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+/* 
+reset
+common (공통으로 사용할 클래스, 디자인)
+각 페이지 css
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+/* 공통으로 사용할 클래스!!! */
+
+/* float해제 시 사용할 가상요소!!!! */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 영역제목에 공통으로 사용할 디자인!!! */
+.title-box {
+    color:#ff8672;
+    text-align: center;
+    margin-bottom: 80px;
+}
+.title-box .title {
+    font-size: 30px;
+    font-weight: 700;
+}
+.title-box .des {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+
+
+/**** header ********************************************************************************/
+header {
+    /* background-color: yellow; */
+    
+}
+header .inbox {
+    width: 90%;
+    margin: 0 auto;
+    
+    /* outline: 2px solid red; */
+}
+
+header .logo {
+    
+    width: 100%;
+    height: 120px;
+    /* padding: 20px 0; */
+    /* box-sizing: border-box; */
+    /* padding-top: 50px; */
+    /* text-align: center; */
+    /* transform: translateX(800px); */
+
+    position: relative;
+}
+header .logo a {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+header .logo img {
+    display: block;
+    height: 80px;
+}
+
+header .gnb {
+    height: 50px;
+    line-height: 50px;
+    /* outline: 2px solid blue; */
+    text-align: center;
+}
+
+header .gnb .menu {
+    /* width: 1920px;
+    margin: 30px auto 0 0; */
+   
+    /*  transform: translateX(750px); */
+    
+}
+header .gnb .menu li {
+    /* float: left; */
+    /* margin-left: 20px; */
+
+    display: inline-block;
+}
+header .gnb .menu li~li {
+    margin-left: 20px;
+}
+
+header .gnb .menu li a {
+    color: #ff8672;
+}
+header .gnb .menu li a:hover {
+    text-decoration: underline;
+}
+
+
+section .main .box {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* section .content .best-product h2 {
+    color:#ff8672;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;    
+}
+
+section .content .best-product p {
+    color: #ff8672;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+} */
+
+
+section .best-product .title-box {
+    margin-top: 100px;
+}
+
+section .best-product {
+    margin-bottom: 100px;
+}
+section .best-product .product-img {
+    /* background-color: bisque; */
+    width: 1280px;
+    margin: 0 auto;
+    
+}
+section .best-product .product-img .box {
+    width: 32%;
+    float: left;
+
+    /* outline: 2px solid red; */
+}
+section .best-product .product-img .box~.box {
+    margin-left: 2%;
+}
+
+/* section .best-product .product-img .box {
+     display: inline-block;
+     margin: 80px auto;
+} */
+/*
+.box가 인라인 성격을 가지고 있으면 글자처럼 취급되기 때문에,
+상위요소의 text-align으로 정렬할 수 있다 
+*/
+
+/* 
+요소를 가로 나열하려면~~~~
+
+1) 인라인블록, 인라인 (요소가 인라인 성격을 가지고 있어야해!!!)
+2) float
+>> 주어진 공간을 일정하게 나눠서 사용하려면!
+>> width설정 필요! width값 없으면 내용만큼만 공간을 갖기 때문!
+*/
+
+
+section .best-product .product-img .box img {
+    /* width: 400px;
+    margin-right: 20px; */
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+section .best-product .product-img .box p {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* section .story .title {
+    color:#ff8672;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+section .story .story-des {
+    color: #ff8672;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 80px;
+} */
+
+section .story .story-wrap {
+  /*   background-color: bisque; */
+    /* width: 1920px;  */
+    /* 노트북 화면은 평균적으로 1920px보다 작은데 그런 경우에도 무조건 1920px을 사용하게 되니까 문제가 되겠죠?  */
+
+    /* width: 100%; */
+    /* 화면 너비 전체를 사용하고 싶을 때는 100% 설정 */
+
+    /* 하지만 우리는 컨텐츠 너비를 사용하겠다!!!!!!! */
+    width: 1280px;
+    margin: 0 auto;
+    
+}
+section .story .story-wrap .story-content {
+    /* width: 35%; */
+    width: 49%; /* 여백을 2% 사용하기 때문에 98% / 2개 = 49% */
+    float: left;
+     
+}
+
+section .story .story-wrap .story-content:first-child {
+    margin-right: 2%;
+}
+section .story .story-wrap .story-content a {
+    display: block;
+    /* width: 100%; */
+    margin-bottom: 10px;
+}
+section .story .story-wrap .story-content a img {
+    width: 100%;
+    display: block;
+}
+section .story .story-wrap .story-content p {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+
+footer {
+    background-color: #323130;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 20px 0;
+ }

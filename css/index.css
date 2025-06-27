@@ -62,7 +62,12 @@ h1, h2, h3, h4, h5, h6 {
 /**** header ********************************************************************************/
 header {
     /* background-color: yellow; */
-    
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
 }
 header .inbox {
     width: 90%;
@@ -97,7 +102,6 @@ header .logo img {
 
 header .gnb {
     height: 50px;
-    line-height: 50px;
     /* outline: 2px solid blue; */
     text-align: center;
 }
@@ -107,17 +111,47 @@ header .gnb .menu {
     margin: 30px auto 0 0; */
    
     /*  transform: translateX(750px); */
-    
 }
-header .gnb .menu li {
+header .gnb .menu > li {
     /* float: left; */
     /* margin-left: 20px; */
 
     display: inline-block;
+    position: relative;
+    padding: 0 10px;
 }
-header .gnb .menu li~li {
+header .gnb .menu > li~li {
     margin-left: 20px;
 }
+header .gnb .menu > li> a {
+    line-height: 50px;
+    font-size: 18px;
+}
+
+header .gnb .menu > li .smenu {
+    background-color: #fff;
+    box-shadow: 0 2px 8px #ccc;
+
+    position: absolute;
+    left: 0;
+
+    text-align: left;
+    /* left: 50%;
+    transform: translateX(-50%); */
+
+    width: 160px;
+    padding: 0 10px;
+
+    display: none;
+}
+.smenu li {
+    /* outline: 1px solid blue; */
+}
+.smenu li a {
+    line-height: 40px;
+}
+
+
 
 header .gnb .menu li a {
     color: #ff8672;
@@ -126,6 +160,12 @@ header .gnb .menu li a:hover {
     text-decoration: underline;
 }
 
+
+
+
+
+
+
 main {
     /* width: 100%;
     height: 100%;
@@ -133,7 +173,8 @@ main {
     box-sizing: border-box;*/
 
     width: 1280px;
-    margin: 0 auto;
+    margin: 200px auto 0;
+    /* 고정된 header의 높이 170 + 여백 30을 고려해서 200px */
     box-shadow: 0 6px 12px #ccc;
 
     border-radius: 30px;

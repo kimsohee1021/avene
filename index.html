@@ -3,14 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>Avene | 홈</title>
     <link rel="stylesheet" href="css/index.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+
+    <script>
+
+        //메뉴구현 시 이벤트 - mouseenter / mouseleave
+
+        $(function () {
+            $('.menu > li').mouseenter(function(){
+                //$('.smenu').slideDown();
+                $(this).find('.smenu').slideDown(600);
+            });
+
+            $('.menu > li').mouseleave(function(){
+                $('.smenu').stop().slideUp();
+            });
+        });
+    </script>
 </head>
 
 <body>
     <header>
 
-        <div class="inbox"> 
+        <div class="inbox">
             <div class="logo">
                 <a href="#"><img src="images/avenelogo.png" alt="아벤느 로고"></a>
             </div>
@@ -18,42 +36,37 @@
             <nav class="gnb">
                 <ul class="menu clear">
                     <li><a href="#">HOME</a></li>
-                    <li><a href="#">AVENE</a>
-                            <ul class="smenu">
+
+                    <li>
+                        <a href="#">AVENE</a>
+                        <ul class="smenu">
                             <li><a href="avene/presentation.html">About Avene</a></li>
                             <li><a href="avene/eauthermale.html">Eau Thermale</a></li>
                         </ul>
-                     </li>
-                    <li><a href="#">PRODUCT</a>
-                    <ul class="smenu">
-                        <li>
-                            <a href="product/cicalfate.html">cicalfate</a>
-                        </li>
-                        <li>
-                            <a href="product/eauthermale_.html">Eau Thermale</a>
-                        </li>
-                        <li>
-                            <a href="product/skincare.html">Skin Care</a>
-                        </li>
-                        <li>
-                            <a href="product/bodysuncare.html">Body & Sun Care</a>
-                        </li>
-                    </ul>
                     </li>
 
-                    <li><a href="#">AVENE DERMO STORY</a>
-                    
+                    <li>
+                        <a href="#">PRODUCT</a>
                         <ul class="smenu">
-                            <li>
-                                <a href="dermostory/dermostory.html">Avene Dermo Story</a>
-                            </li>
+                            <li><a href="product/cicalfate.html">cicalfate</a> </li>
+                            <li><a href="product/eauthermale_.html">Eau Thermale</a></li>
+                            <li><a href="product/skincare.html">Skin Care</a></li>
+                            <li><a href="product/bodysuncare.html">Body & Sun Care</a></li>
                         </ul>
-                    
+                    </li>
+
+                    <li>
+                        <a href="#">AVENE DERMO STORY</a>
+
+                        <ul class="smenu">
+                            <li><a href="dermostory/dermostory.html">Avene Dermo Story</a></li>
+                        </ul>
+
                     </li>
                     <!-- ::after  -->
                 </ul>
             </nav>
-            
+
         </div>
     </header>
 
@@ -61,9 +74,9 @@
         <!-- <video class="box" src="images/avenecampagn.mp4" controls loop autoplay width="1920" height="1080"></video> -->
 
         <video autoplay loop muted>
-             <source src="media/avenecampagn.mp4">
+            <source src="media/avenecampagn.mp4">
         </video>
-     </main>
+    </main>
 
 
     <section>
@@ -97,7 +110,7 @@
                         <p>클리낭스젤</p>
                     </a>
                 </div>
-                
+
             </div>
         </article>
 
